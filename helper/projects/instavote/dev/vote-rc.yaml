@@ -17,6 +17,6 @@ spec:
         role: vote
     spec:
       containers:
-       - name: app
-         image: schoolofdevops/vote
+      - name: app
+        image: schoolofdevops/vote:v1
   
