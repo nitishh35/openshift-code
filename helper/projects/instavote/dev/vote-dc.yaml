@@ -1,1 +1,32 @@
 
+apiVersion: v1
+kind: DeploymentConfig
+metadata:
+  name: vote
+  namespace: instavote
+spec:
+  type: Rolling
+  rollingParams:
+    maxSurge:
+    maxUnavailable: 1
+    intervalSeconds: 20
+  replicas: 4
+  selector: 
+    matchLabels:
+      app: python
+      version: v1
+      role: vote
+    matchExpressions: 
+      - {key: version, operator: In, values: [v1, v2, v3]}  
+  template:
+    metadata:
+      name: vote
+      labels:
+        app: python
+        verion: v1
+        role: vote
+    spec:
+      containers:
+      - name: app
+        image: schoolofdevops/vote:v1
+  
