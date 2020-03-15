@@ -19,5 +19,5 @@ spec:
     spec:
       containers:
       - name: app
-        image: schoolofdevops/vote:v1
+        image: initcron/oc-vote:v1
   
