@@ -5,10 +5,11 @@ metadata:
   namespace: instavote
 spec:
   replicas: 4
-  selector:
-    app: python
-    version: v1
-    role: vote
+  selector: 
+    matchLabels
+      app: python
+      version: v1
+      role: vote
   template:
     metadata:
       name: vote
