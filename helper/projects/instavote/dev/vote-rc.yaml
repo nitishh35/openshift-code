@@ -10,6 +10,8 @@ spec:
       app: python
       version: v1
       role: vote
+    matchExpressions: 
+      - {key: version, operator: In, values: [v1, v2, v3]}  
   template:
     metadata:
       name: vote
