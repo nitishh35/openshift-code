@@ -6,8 +6,9 @@ metadata:
 spec:
   replicas: 4
   selector:
-    role: vote
+    app: pthon
     version: v1
+    role: vote
   template:
     metadata:
       name: vote
